@@ -1,5 +1,6 @@
 import Avatar from '../Avatar';
 import content from './constants';
+import slack from '../../assets/slack.png';
 import './styles.css';
 
 
@@ -7,6 +8,7 @@ const Main = () => {
   return (
     <main>
       <Avatar />
+
       <section className="main-content">
         {content.map((item, i) => 
           <div id={item.id} key={i} className={item.id === 'slack' ? 'hidden' : 'button'}>
@@ -20,6 +22,13 @@ const Main = () => {
             </a>
           </div>
         )}
+
+        <div className="socials">
+          <img src={slack} alt="Slack icon, leads nowhere" />
+          <a href="https://github.com/MiracleUFO/zuri-task1"target="_blank" rel="noreferrer">
+            <i className="fa fa-brands fa-github"></i>
+          </a>
+        </div>
       </section>
     </main>
   );

@@ -37,3 +37,19 @@ main {
 .button:hover .sub-text {
   display: flex;
 }
+
+.socials {
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.socials > * {
+  padding-right: 2em;
+}
+
+.socials > a i {
+  font-size: 1.7em;
+  color: black;
+}
