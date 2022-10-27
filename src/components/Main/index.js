@@ -11,9 +11,9 @@ const Main = () => {
 
       <section className="main-content">
         {content.map((item, i) => 
-          <div id={item.id} key={i} className={item.id === 'slack' ? 'hidden' : 'button'}>
+          <div id={item.id} key={i} className={item.id === 'slack' ? 'hidden' : ''}>
             {item?.text}
-            <a href={item?.linkTo} target="_blank" rel="noreferrer">
+            <a href={item?.linkTo} target="_blank" rel="noreferrer" className="button">
               {item?.id === 'twitter' ?
                 <i className="fa fa-twitter header" aria-hidden="true"></i>
               : <p className="header">{item?.header}</p>

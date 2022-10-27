@@ -16,9 +16,6 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.button a {
   color: #101828;
   font-weight: 500;
   font-size: 1.125em;
