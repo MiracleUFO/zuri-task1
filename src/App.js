@@ -1,15 +1,13 @@
 import Header from './components/Header';
+import Main from './components/Main';
 import Footer from './components/Footer';
 import './styles/App.css';
-import Avatar from './components/Avatar';
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <main>
-        <Avatar />
-      </main>
+      <Main />
       <Footer />
     </div>
   );

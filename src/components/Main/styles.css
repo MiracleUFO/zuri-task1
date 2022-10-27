@@ -1,0 +1,39 @@
+main {
+  grid-area: main;
+  width: 70vw;
+  margin: 0 auto;
+}
+
+.main-content {
+  margin: 45px auto;
+}
+
+.button {
+  background-color: #EAECF0;
+  margin: 16px auto;
+  border-radius: 8px;
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button a {
+  color: #101828;
+  font-weight: 500;
+  font-size: 1.125em;
+  text-decoration: none;
+}
+
+.sub-text {
+  color: gray;
+  font-size: 0.9em;
+}
+
+.sub-text, .button:hover .header {
+  display: none;
+}
+
+.button:hover .sub-text {
+  display: flex;
+}
