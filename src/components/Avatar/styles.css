@@ -1,0 +1,11 @@
+.avatar-container ,
+.avatar-container > img {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.avatar-container > img {
+  object-fit: cover;
+}
