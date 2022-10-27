@@ -1,5 +1,5 @@
-import menuIcon from '../../assets/menu.png';
-import shareIcon from '../../assets/share.png';
+import menuIcon from '../../assets/menu-icon.png';
+import shareIcon from '../../assets/share-icon.png';
 import './styles.css';
 
 const Header = () => {

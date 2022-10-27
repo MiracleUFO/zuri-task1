@@ -1,0 +1,14 @@
+footer {
+  grid-area: footer;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #EAECF0;
+  padding-bottom: 20px;
+  color: #667085;
+}
+
+footer img {
+  width: 12%;
+}
