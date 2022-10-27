@@ -1,3 +1,8 @@
+.avatar-section {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
 .avatar-container ,
 .avatar-container > img {
   width: 88px;
@@ -8,4 +13,8 @@
 
 .avatar-container > img {
   object-fit: cover;
+}
+
+#slack {
+  display: none;
 }
