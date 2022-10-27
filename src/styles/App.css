@@ -1,0 +1,16 @@
+.App {
+  text-align: center;
+  width: 80vw;
+  height: 100vh;
+  margin: 0 auto;
+  padding-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: 
+    'header'
+    'main'
+    'footer'
+  ;
+  font-family: Arial, sans serif;
+}
