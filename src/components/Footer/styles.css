@@ -1,14 +1,26 @@
 footer {
   grid-area: footer;
-  height: 70px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
   border-top: 1px solid #EAECF0;
-  padding-bottom: 20px;
+  padding: 20px 0;
   color: #667085;
 }
 
 footer img {
-  width: 12%;
+  width: 50%;
+}
+
+@media (min-width: 750px) {
+  footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  footer img {
+    width: 12%;
+  }  
 }

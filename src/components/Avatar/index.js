@@ -4,7 +4,7 @@ import './styles.css';
 const Avatar = () => {
   return (
     <div className="avatar-container">
-      <img src={avatar} alt="avatar" />
+      <img id="profile__img" src={avatar} alt="avatar" />
     </div>
   );
 };
