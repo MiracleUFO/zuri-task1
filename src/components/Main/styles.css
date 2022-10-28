@@ -22,10 +22,15 @@ main {
   text-decoration: none;
 }
 
+.button:hover {
+  background-color: #D0D5DD;
+}
+
 .sub-text {
-  color: gray;
+  color: #667085;
   font-size: 0.9em;
 }
+
 
 .sub-text, .button:hover .header {
   display: none;
