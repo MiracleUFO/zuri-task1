@@ -1,4 +1,4 @@
-footer {
+.footer {
   grid-area: footer;
   display: flex;
   flex-direction: column;
@@ -9,18 +9,18 @@ footer {
   color: #667085;
 }
 
-footer img {
+.footer img {
   width: 50%;
 }
 
 @media (min-width: 750px) {
-  footer {
+  .footer {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
   }
 
-  footer img {
+  .footer img {
     width: 12%;
   }  
 }

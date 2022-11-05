@@ -1,0 +1,120 @@
+.textBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.termsBox {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  margin: 30px 0;
+}
+
+.label {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: #344054;
+  margin: 25px 0 10px;
+}
+
+.termsBox .label {
+  margin: 0;
+  font-size: 1em;
+  color: #475467;
+  font-weight: 300;
+}
+
+.input, .textArea {
+  display: block;
+  width: 100%;
+  height: 44px;
+  padding: 14px 10px;
+  box-sizing: border-box;
+  border: 1px solid #D0D5DD;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  border-radius: 8px;
+  resize: none;
+  font-size: 16px;
+  font-family: 'Inter';
+}
+
+.input:focus, .textArea:focus {
+  outline: none;
+  border: 1px solid #a6c7f7;
+}
+
+.termsBox .input {
+  height: 0;
+  width: 0;
+  z-index: 5;
+}
+
+.textArea {
+  height: auto;
+}
+
+.input::placeholder, .textArea::placeholder {
+  color: #667085;
+}
+
+.input:focus::placeholder, .textArea:focus::placeholder {
+  color: #475467;
+}
+
+@media (min-width: 750px) {
+  .input_small {
+    width: calc(50% - 20px);
+  }
+}
+
+.custom_checkbox {
+  position: relative;
+  border: 1px solid #D0D5DD;
+  min-width: 18px;
+  min-height: 18px;
+  border-radius: 6px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.custom_checkbox:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.custom_checkbox:after {
+  top: 3px;
+  left: 6.5px;
+  width: 3px;
+  height: 8px;
+  border: solid #1570EF;
+  border-radius: 10px;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  z-index: 2;
+}
+
+.input:checked ~ .custom_checkbox {
+  border: 1px solid #1570EF;
+}
+
+/* Shows the checkmark when checked */
+.active:after {
+  display: block;
+}
+
+.invalid_on_unfocus:invalid {
+  border: solid #F89687;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #FFD3CC;
+}
+
+.errorText {
+  color: #F83F23;
+  font-weight: 300;
+}

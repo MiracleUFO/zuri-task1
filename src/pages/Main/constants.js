@@ -38,6 +38,12 @@ const content = [
     header: 'Free Design Book just for You',
     subText: 'Learn to do awesome designs for free here',
     linkTo: 'https://books.zuri.team/design-rules'
+  },
+  {
+    id: 'contact',
+    header: 'Contact Me',
+    subText: 'Reach out to me here',
+    linkTo: '/contact'
   }
 ];
 
