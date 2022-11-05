@@ -1,7 +1,10 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import Loader from '../../components/Loader';
 import TextField from '../../components/TextField';
+
 import styles from './styles.module.css';
+import 'animate.css';
 
 const Contact = () => {
   const initialFieldValues = {
@@ -14,11 +17,18 @@ const Contact = () => {
 
   const [fields, setFields] = useState(initialFieldValues);
   const [showLoader, setShowLoader] = useState(false);
+  const [invalidMessageText, setInvalidMessageText] = useState(false);
+  const navigate = useNavigate();
+
+  const submitDisabled= useMemo(() => {
+    const { firstName, lastName, email, message, terms } = fields;
+    const emailRegex = (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/);
+    return !(firstName && lastName && email.match(emailRegex) && message && terms);
+  }, [fields])
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const {firstName, lastName, email, message, terms} = fields;
-    console.log(firstName, lastName, email, message, terms);
     if (
       firstName &&
       lastName &&
@@ -27,9 +37,11 @@ const Contact = () => {
       terms
     ) {
       setShowLoader(true);
-      setTimeout(() => setShowLoader(false), 3000);
-
-    }
+      setTimeout(() => {
+        navigate('/');
+      }, 3000);
+    } else if (!message)
+      setInvalidMessageText(true);
   };
 
   const handleChange = (e) => {
@@ -86,17 +98,25 @@ const Contact = () => {
             onChange={handleChange}
             required
           />
-          <TextField
-            id="message"
-            name="message"
-            label="Message"
-            placeholder="Send me a message and I'll reply you as soon as possible..."
-            value={fields.message}
-            onChange={handleChange}
-            multiple
-            rows="6"
-            required
-          />
+
+          <div className={styles.messageText}>
+            <TextField
+              id="message"
+              name="message"
+              label="Message"
+              placeholder="Send me a message and I'll reply you as soon as possible..."
+              value={fields.message}
+              onChange={handleChange}
+              multiple
+              rows="6"
+            />
+            {!fields.message ?
+              <p className={`${styles.errorText} ${invalidMessageText ? styles.show : ''} animate__animated animate__flipInX`}>
+                Please enter a message.
+              </p> 
+            : null}
+          </div>
+
           <TextField
             id="terms"
             name="terms"
@@ -107,7 +127,15 @@ const Contact = () => {
             onChange={handleChange}
             required
           />
-          <button id='btn__submit' type="submit" className={styles.submit_btn}>Send Message</button>
+
+          <button
+            id="btn__submit"
+            type="submit"
+            className={styles.submit_btn}
+            disabled={submitDisabled}
+          >
+            Send Message
+          </button>
         </form>
       </>}
     </main>
