@@ -65,12 +65,3 @@
   background-color: #B2DDFF;
   border: solid #B2DDFF;
 }
-
-.errorText {
-  color: #F83F23;
-  display: none;
-}
-
-.messageText:hover .errorText, .show {
-  display: inline-block;
-}

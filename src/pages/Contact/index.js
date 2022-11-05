@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+import { emailValidRegex } from '../../constants/emailValidRegex';
 import Loader from '../../components/Loader';
 import TextField from '../../components/TextField';
 
@@ -17,13 +18,11 @@ const Contact = () => {
 
   const [fields, setFields] = useState(initialFieldValues);
   const [showLoader, setShowLoader] = useState(false);
-  const [invalidMessageText, setInvalidMessageText] = useState(false);
   const navigate = useNavigate();
 
   const submitDisabled= useMemo(() => {
     const { firstName, lastName, email, message, terms } = fields;
-    const emailRegex = (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/);
-    return !(firstName && lastName && email.match(emailRegex) && message && terms);
+    return !(firstName && lastName && email.match(emailValidRegex) && message && terms);
   }, [fields])
 
   const handleSubmit = (e) => {
@@ -40,8 +39,7 @@ const Contact = () => {
       setTimeout(() => {
         navigate('/');
       }, 3000);
-    } else if (!message)
-      setInvalidMessageText(true);
+    }
   };
 
   const handleChange = (e) => {
@@ -99,24 +97,18 @@ const Contact = () => {
             required
           />
 
-          <div className={styles.messageText}>
-            <TextField
-              id="message"
-              name="message"
-              label="Message"
-              placeholder="Send me a message and I'll reply you as soon as possible..."
-              value={fields.message}
-              onChange={handleChange}
-              multiple
-              rows="6"
-            />
-            {!fields.message ?
-              <p className={`${styles.errorText} ${invalidMessageText ? styles.show : ''} animate__animated animate__flipInX`}>
-                Please enter a message.
-              </p> 
-            : null}
-          </div>
-
+          <TextField
+            id="message"
+            name="message"
+            label="Message"
+            placeholder="Send me a message and I'll reply you as soon as possible..."
+            value={fields.message}
+            onChange={handleChange}
+            multiple
+            rows="6"
+            required
+          />
+         
           <TextField
             id="terms"
             name="terms"
