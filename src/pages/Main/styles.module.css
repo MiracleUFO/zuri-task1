@@ -1,10 +1,10 @@
-main {
+.main {
   grid-area: main;
   width: 70vw;
   margin: 0 auto;
 }
 
-.main-content {
+.main_content {
   margin: 45px auto;
 }
 
@@ -26,17 +26,17 @@ main {
   background-color: #D0D5DD;
 }
 
-.sub-text {
+.sub_text {
   color: #667085;
   font-size: 0.9em;
 }
 
 
-.sub-text, .button:hover .header {
+.sub_text, .button:hover .header {
   display: none;
 }
 
-.button:hover .sub-text {
+.button:hover .sub_text {
   display: flex;
 }
 
@@ -54,4 +54,8 @@ main {
 .socials > a i {
   font-size: 1.7em;
   color: black;
+}
+
+.hidden {
+  display: none;
 }

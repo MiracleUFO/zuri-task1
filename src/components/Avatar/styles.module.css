@@ -1,24 +1,20 @@
-.avatar-section {
+.avatar_section {
   font-size: 20px;
   font-weight: bolder;
 }
 
-.avatar-container ,
-.avatar-container > img {
+.avatar_container ,
+.avatar_container > img {
   width: 88px;
   height: 88px;
   border-radius: 50%;
   margin: 0 auto;
 }
 
-.avatar-container > img {
+.avatar_container > img {
   object-fit: cover;
 }
 
-#slack {
-  display: none;
-}
-
-.hidden {
+.slack {
   display: none;
 }

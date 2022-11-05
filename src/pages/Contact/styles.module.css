@@ -1,0 +1,23 @@
+.main {
+  grid-area: main;
+  width: 70vw;
+  margin: 100px auto 0;
+  text-align: start;
+}
+
+.header {
+  
+}
+
+.header h1 {
+  line-height: 44px;
+  font-size: 36px;
+  font-weight: 500;
+}
+
+.header p {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: #475467;
+}
