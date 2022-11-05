@@ -2,6 +2,7 @@ import styles from './styles.module.css';
 
 const TextField = ({ 
   id,
+  type,
   label,
   placeholder,
   value,
@@ -10,7 +11,6 @@ const TextField = ({
   multiple,
   ...rest
 }) => {
-  console.log(small);
   return (
     <div className={`${styles.textBox} ${small ? styles.input_small : ''}`}>
       <label htmlFor={id} className={styles.label}>{label}</label>
@@ -28,6 +28,7 @@ const TextField = ({
           className={styles.input}
           id={id}
           value={value}
+          type={type}
           placeholder={placeholder}
           onChange={onChange}
           {...rest}

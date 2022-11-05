@@ -37,7 +37,7 @@ const Contact = () => {
           <TextField
             id="first_name"
             name="firstName"
-            label="First Name"
+            label="First name"
             placeholder="Enter your first name"
             value={fields.firstName}
             onChange={handleChange}
@@ -45,25 +45,39 @@ const Contact = () => {
             required
           />
           <TextField
-            id="first_name"
-            name="firstName"
-            label="First Name"
-            placeholder="Enter your first name"
-            value={fields.firstName}
+            id="last_name"
+            name="lastName"
+            label="Last name"
+            placeholder="Enter your last name"
+            value={fields.lastName}
             onChange={handleChange}
             small
             required
           />
         </section>
         <TextField
-          id="first_name"
-          name="firstName"
-          label="First Name"
-          placeholder="Enter your first name"
-          value={fields.firstName}
+          id="email"
+          name="email"
+          label="Email"
+          placeholder="yourname@email.com"
+          type="email"
+          value={fields.email}
           onChange={handleChange}
           required
         />
+        <TextField
+          id="message"
+          name="message"
+          label="Message"
+          placeholder="Send me a message and I'll reply you as soon as possible..."
+          value={fields.message}
+          onChange={handleChange}
+          multiple
+          rows="6"
+          required
+        />
+        
+        <button type="submit">Submit</button>
       </form>
     </main>
   )
