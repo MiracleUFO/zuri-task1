@@ -1,12 +1,7 @@
 .main {
   grid-area: main;
-  width: 70vw;
-  margin: 100px auto 0;
+  margin: 100px auto;
   text-align: start;
-}
-
-.header {
-  
 }
 
 .header h1 {
@@ -20,4 +15,25 @@
   font-size: 20px;
   line-height: 30px;
   color: #475467;
+  letter-spacing: 1.1px;
+}
+
+.form {
+  margin-top: 45px;
+}
+
+.flex_container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+@media (min-width: 750px) {
+  .main {
+    width: 50vw;
+  }
+
+  .flex_container {
+    flex-direction: row;
+  }
 }
