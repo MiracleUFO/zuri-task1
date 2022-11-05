@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import TextField from '../../components/TextField';
 import styles from './styles.module.css';
 
@@ -7,24 +7,26 @@ const Contact = () => {
     firstName: '',
     lastName: '',
     email: '',
-    message: ''
+    message: '',
+    terms: false,
   };
 
   const [fields, setFields] = useState(initialFieldValues);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(fields);
   };
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value, checked } = e.target;
+    const valueToSet = name === 'terms' ? checked : value;
     setFields({
       ...fields,
-      [name]: value
+      [name]: valueToSet
     });
-    console.log(fields);
   };
+
+  const setChecked = (value) => setFields({...fields, terms: value});
 
   return (
     <main className={styles.main}>
@@ -76,7 +78,16 @@ const Contact = () => {
           rows="6"
           required
         />
-        
+        <TextField
+          id="terms"
+          name="terms"
+          label="You agree to providing your data to Miracle Ufodiama who may contact you."
+          type="checkbox"
+          checked={fields.terms}
+          setChecked={setChecked}
+          onChange={handleChange}
+          required
+        />
         <button type="submit">Submit</button>
       </form>
     </main>

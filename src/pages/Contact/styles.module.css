@@ -12,11 +12,10 @@
 }
 
 .header p {
-  font-weight: 400;
+  font-weight: 300;
   font-size: 20px;
   line-height: 30px;
   color: #475467;
-  letter-spacing: 1.1px;
 }
 
 .form {
